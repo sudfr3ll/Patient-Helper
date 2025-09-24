@@ -10,6 +10,8 @@ type AuthContextValue = {
   signOut: () => Promise<void>;
 };
 
+
+
 const KEY = '@patient_helper_auth_v1';
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
