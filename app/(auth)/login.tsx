@@ -75,7 +75,7 @@ export default function Login() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Text style={styles.title}>Sign in</Text>
+        <Text style={styles.title} >Sign in</Text>
         <Text style={styles.subtitle}>Access your attendant or patient account</Text>
 
         <View style={styles.form}>
