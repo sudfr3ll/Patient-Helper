@@ -188,8 +188,8 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'flex-start',
   },
-  title: { fontSize: 28, fontWeight: '700', marginBottom: 8 },
-  subtitle: { fontSize: 14, color: '#666', marginBottom: 24 },
+  title: { fontSize: 28, fontWeight: '700', marginTop: 34, marginBottom: 3, color: '#111', textAlign: 'center' },
+  subtitle: { fontSize: 14, color: '#666', marginBottom: 24, textAlign: 'center' },
 
   form: { marginTop: 4 },
 
