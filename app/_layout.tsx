@@ -23,7 +23,7 @@ function InnerRouter() {
   if (!authState.isSignedIn) {
     return (
       <Stack>
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
     );
