@@ -17,7 +17,6 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [authState, setAuthState] = useState<AuthState>({ isSignedIn: false, role: null, name: null, loading: true });
 
-  
   useEffect(() => {
     (async () => {
       try {
