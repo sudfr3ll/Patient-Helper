@@ -13,9 +13,11 @@ type AuthContextValue = {
 const KEY = '@patient_helper_auth_v1';
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [authState, setAuthState] = useState<AuthState>({ isSignedIn: false, role: null, name: null, loading: true });
 
+  
   useEffect(() => {
     (async () => {
       try {
