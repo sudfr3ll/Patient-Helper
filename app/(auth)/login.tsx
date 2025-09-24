@@ -2,7 +2,7 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Alert, Button, Text, TextInput, View } from 'react-native';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../../services/AuthContext';
 
 export default function Login() {
   const router = useRouter();
@@ -12,11 +12,9 @@ export default function Login() {
 
   const doLogin = async (role: 'attendant' | 'patient') => {
     if (!email || !password) return Alert.alert('Enter credentials');
-    // TODO: call backend to validate credentials
     await signIn(role, email.split('@')[0]);
-    // route to role root
-    if (role === 'attendant') router.replace('./(attendant)');
-    else router.replace('./(patient)');
+    if (role === 'attendant') router.replace('/(attendant)');
+    else router.replace('/(patient)');
   };
 
   return (

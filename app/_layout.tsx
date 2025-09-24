@@ -7,7 +7,7 @@ import { ActivityIndicator, View } from 'react-native';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { AuthProvider, useAuth } from './(auth)/AuthContext'; // keep your AuthContext here
+import { AuthProvider, useAuth } from '../services/AuthContext'; // keep your AuthContext here
 
 function InnerRouter() {
   const { authState } = useAuth();

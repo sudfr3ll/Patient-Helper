@@ -1,10 +1,9 @@
-// app/auth/AuthContext.tsx
+// services/AuthContext.tsx
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 type Role = 'attendant' | 'patient' | null;
 type AuthState = { isSignedIn: boolean; role: Role; name?: string | null; loading: boolean };
-
 type AuthContextValue = {
   authState: AuthState;
   signIn: (role: Exclude<Role, null>, name?: string) => Promise<void>;
@@ -24,9 +23,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (raw) {
           const parsed = JSON.parse(raw) as { role: Role; name?: string };
           setAuthState({ isSignedIn: !!parsed.role, role: parsed.role ?? null, name: parsed.name ?? null, loading: false });
-        } else {
-          setAuthState(s => ({ ...s, loading: false }));
-        }
+        } else setAuthState(s => ({ ...s, loading: false }));
       } catch {
         setAuthState(s => ({ ...s, loading: false }));
       }
